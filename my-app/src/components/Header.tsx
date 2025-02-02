@@ -1,16 +1,11 @@
 import React from 'react';
+import Navigation from './Navigation';
 
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <h1>Meu Site</h1>
-      <nav>
-        <ul>
-          <li><a href="#secao1">Seção 1</a></li>
-          <li><a href="#secao2">Seção 2</a></li>
-          <li><a href="#secao3">Seção 3</a></li>
-        </ul>
-      </nav>
+      <h1>SUPER LOJA</h1>
+      <Navigation />
     </header>
   );
 };
