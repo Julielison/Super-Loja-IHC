@@ -36,7 +36,7 @@ body {
 
 .nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
   gap: 15px;
   padding: 10px;
@@ -49,21 +49,21 @@ body {
   background-color: #D9D9D9;
   border-radius: 4px;
   outline: none;
-  width: 200px;
+  width: 100%; /* Garante que o input ocupe toda a largura disponível */
 }
 
+
 .nav-item {
+  font-family: inherit;
+  color: inherit;
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: transparent;
-  color: white;
-  border: none;
+  gap: 8px; /* Espaço entre o ícone e o texto */
   padding: 8px 12px;
-  border-radius: 4px;
-  cursor: pointer;
+  border: none;
+  background: none;
   font-size: 16px;
-  transition: background 0.3s ease;
+  cursor: pointer;
 }
 
 .nav-item:hover {
@@ -71,9 +71,11 @@ body {
 }
 
 .nav-icon {
-  font-size: 18px;
+  width: 24px;  /* Ajuste a largura */
+  height: 24px; /* Ajuste a altura */
+  object-fit: contain;
+  filter: invert(1);
 }
-
 
 .card-section {
   display: flex;

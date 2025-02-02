@@ -4,7 +4,7 @@ import Navigation from './Navigation';
 const Header: React.FC = () => {
   return (
     <header className="header">
-      <h1>SUPER LOJA</h1>
+      <a href="" className="logo-link">SUPERLOJA</a>
       <Navigation />
     </header>
   );
