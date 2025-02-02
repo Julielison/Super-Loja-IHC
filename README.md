@@ -1,1 +1,0 @@
-# Super-Loja-IHC
