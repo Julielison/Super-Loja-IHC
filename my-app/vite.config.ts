@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@assets': path.resolve(__dirname, 'src/assets') // Ajuste o caminho conforme necessário
+      '@assets': path.resolve(new URL('./src/assets', import.meta.url).pathname)
     }
   }
 })

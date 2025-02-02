@@ -1,5 +1,12 @@
+:root {
+  --primary-color: #506F6A; /* Cor principal */
+  --hover-color: rgba(0, 123, 255, 0.1); /* Cor de hover */
+  --border-color: currentColor; /* Usa a cor do texto */
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -7,29 +14,66 @@ body {
 }
 
 .header {
-  background-color: #6200ea;
+  background-color: var(--primary-color);
   color: white;
-  padding: 15px;
+  padding: 0px 2px;
   text-align: center;
+  align-items: center;
   display: flex;
+  flex-direction: row;
+  height: 70px;
 }
 
-.nav ul {
-  list-style: none;
-  padding: 0;
-  text-align: center;
-}
-
-.nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.nav ul li a {
-  color: white;
+.logo-link {
   text-decoration: none;
+  color: inherit;
+  font-family: inherit;
   font-weight: bold;
+  font-size: 24px;
+  padding: 0px 10px;
+  font-size: 35px;
 }
+
+.nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: inherit;
+}
+
+.nav-input {
+  padding: 8px;
+  border: transparent;
+  background-color: #D9D9D9;
+  border-radius: 4px;
+  outline: none;
+  width: 200px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.nav-item:hover {
+  background: #0056b3;
+}
+
+.nav-icon {
+  font-size: 18px;
+}
+
 
 .card-section {
   display: flex;
@@ -51,19 +95,12 @@ body {
   color: #6200ea;
 }
 
-.hero-section {
-  display: flex;
-  justify-content: space-between;
-  padding: 50px;
-  background-color: #c69c6d;
-  flex-wrap: wrap;
-}
 
-.featured-section .content {
+.featured-section {
   max-width: 400px;
 }
 
-.featured-section .image img {
+.featured-section {
   max-width: 100%;
   border-radius: 10px;
 }
@@ -81,4 +118,59 @@ body {
   color: white;
   text-align: center;
   padding: 10px;
+}
+
+
+/* ---- Seção 1 -----*/
+.hero-section {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: #c69c6d;
+}
+
+.content {
+  display: block;
+  text-align: left;
+  width: 50%;
+  align-content: center;
+  padding: 0 20px;
+}
+
+.image {
+  width: 50vw;
+  height: auto;
+}
+
+.image img {
+  width: 100%;  /* A imagem ocupa toda a largura da div */
+  height: auto;  /* Mantém a proporção da imagem */
+}
+
+.button-more {
+  font-family: inherit;
+  color: inherit;
+  width: 100%;
+  font-size: inherit;
+  font-weight: bold;
+  height: 60px;
+  background-color: #80BFB4;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Media Query para telas menores que 768px */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; /* Organiza os itens em coluna (um embaixo do outro) */
+  }
+
+  .content {
+    width: 100%;  /* A seção de conteúdo ocupa 100% da largura */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .image {
+    width: 100vw; /* A imagem ocupa 100% da largura da tela */
+  }
 }
