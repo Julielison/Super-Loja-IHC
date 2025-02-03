@@ -129,13 +129,6 @@ body {
   color: white;
 }
 
-.footer {
-  background-color: #6200ea;
-  color: white;
-  text-align: center;
-  padding: 10px;
-}
-
 
 /* ---- Seção 1 -----*/
 .hero-section {
@@ -180,15 +173,81 @@ body {
 
 .footer{
   display: block;
+  background-color: #506F6A;
+  text-align: center;
 }
 
 .footer-main{
   display: flex;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: center;
   justify-content: space-between;
   padding: 30px;
   gap: 20px;
+}
+
+.container {
+  display: block;
+  align-items: center;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: center;
+}
+
+.title-footer{
+  font-weight: bold;
+}
+
+.redes{
+  padding-top: 20px;
+}
+
+.block-footer{
+  padding-bottom: 10px;
+}
+
+
+.footer-icon{
+  width: 30px;
+  filter: invert(1);
+  padding: 5px;
+}
+
+.atendimentos, .horarios {
+  margin-right: 20px; /* Adiciona um espaçamento entre as divs */
+}
+
+.email {
+  display: flex;
+  align-items: center;
+}
+
+.email-text {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+}
+
+.copy{
+  font-size: 15px;
+  margin: 0;
+  background-color: #80a39d;
+  padding-bottom: 2px;
+}
+
+.email-text p {
+  margin: 0 10px;
+}
+
+.email-icon {
+  width: 40px; /* A altura será ajustada automaticamente */
+  filter: invert(1);
+}
+
+.button-email {
+  margin: 0 10px;
 }
 
 
@@ -228,5 +287,10 @@ body {
 
   .ceu-azul{
     display: none;
+  }
+
+  /* footer */
+  .footer-main{
+    display: block;
   }
 }
