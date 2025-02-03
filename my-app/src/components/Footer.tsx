@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import emailIcon from '@assets/icons/email.svg';
 import yt from '@assets/icons/yt.svg';
 import ig from '@assets/icons/insta.svg';
 import send from '@assets/icons/send.svg';
 import face from '@assets/icons/facebook.svg';
 import x from '@assets/icons/x-2.svg';
-
-
-
-
+import Alert from '@mui/material/Alert';
 
 
 
 const Footer: React.FC = () => {
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleSendClick = () => {
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 4000); // Esconde o alert após 4 segundos
+  };
+
+  
   return (
     <footer className="footer">
       <section className='footer-main'>
         <div className='loja block-footer'>
           <div className='text-footer title-footer'>SOBRE A LOJA</div>
-          <div>
-            <p>Quem somos</p>
-            <p>Trabalhe conosco</p>
-            <p>Política de privacidade</p>
-            <p>Termos de uso</p>
+          <div className='links'>
+            <a className="link-f" href="/quem-somos">Quem somos </a>
+            <a className="link-f" href="/trabalhe-conosco">Trabalhe conosco</a>
+            <a className="link-f" href="/politica-de-privacidade">Política de privacidade</a>
+            <a className="link-f" href="/termos-de-uso">Termos de uso</a>
           </div>
         </div>
         <div className='container block-footer'>
           <div className='atendimento title-footer'>ATENDIMENTO</div>
           <div className='sub-container'> 
-            <div className='atendimentos'>
-              <p>Trocas de devoluções</p>
-              <p>Rastreamento de pedido</p>
-              <p>Central de ajuda (FAQ)</p>
-              <p>Fale conosco</p>
+            <div className='atendimentos links'>
+              <a className="link-f" href="/trocas-devolucoes">Trocas de devoluções</a>
+              <a className="link-f" href="/rastreamento">Rastreamento de pedido</a>
+              <a className="link-f" href="/central-de-ajuda">Central de ajuda (FAQ)</a>
+              <a className="link-f" href="/fale-conosco">Fale conosco</a>
             </div>
             <div className='horarios'>
               <p>Horário de atendimento:</p>
@@ -44,34 +51,52 @@ const Footer: React.FC = () => {
         </div>
         <div className='block-footer'>
           <div className='title-footer'>PAGAMENTOS E SEGURANÇA</div>
-          <div>
-            <p>Métodos de pagamento</p>
-            <p>Certificados de Segurança</p>
+          <div className='links'>
+            <a className="link-f" href="/metodos-de-pagamento">Métodos de pagamento</a>
+            <a className="link-f" href="/certificados-de-seguranca">Certificados de Segurança</a>
           </div>
         </div>
         <div className='block-footer'>
           <div className='title-footer'>NOSSAS REDES</div>
           <div className='redes'>
-            <img src={yt} alt="youtube" className='footer-icon'/>
-            <img src={ig} alt="instagram" className='footer-icon'/>
-            <img src={x} alt="x" className='footer-icon'/>
-            <img src={face} alt="facebook" className='footer-icon'/>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
+              <img src={yt} alt="youtube" className='footer-icon'/>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <img src={ig} alt="instagram" className='footer-icon'/>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+              <img src={x} alt="x" className='footer-icon'/>
+            </a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
+              <img src={face} alt="facebook" className='footer-icon'/>
+            </a>
           </div>
         </div>
       </section>
-      <div className='email'>
 
+      {showAlert && (
+        <Alert severity="success" sx={{ 
+          position: "fixed", 
+          top: 20, 
+          right: 20, 
+          zIndex: 1000,
+        }}>
+          E-mail cadastrado com sucesso!
+        </Alert>
+      )}
+
+
+      <div className='email'>
         <div className='email-text'>
           <img src={emailIcon} alt="email" className='email-icon footer-icon'/>
           <p>Receba ofertas por e-mail</p>
         </div>
         <input type="text" placeholder='Digite seu nome...'/>
         <input type="text" placeholder='email@exemplo.com'/>
-        <button className='button-email'>
-          Receber Novidades
-          <img src="" alt="" />
+        <button className='button-email' onClick={handleSendClick}>
+          <img src={send} alt="send" className='footer-icon send-icon'/>
         </button>
-
       </div>
       <p className='copy'>&copy; {new Date().getFullYear()} Minha Loja. Todos os direitos reservados.</p>
     </footer>
