@@ -1,11 +1,11 @@
 import React from 'react';
-import Navigation from './Navigation';
+import Services from './Services';
 
 const Header: React.FC = () => {
   return (
     <header className="header">
       <a href="" className="logo-link">SUPERLOJA</a>
-      <Navigation />
+      <Services />
     </header>
   );
 };

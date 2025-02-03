@@ -17,7 +17,7 @@ const NavItem: React.FC<NavItemProps> = ({ iconSrc, label }) => {
   );
 };
 
-const Navigation: React.FC = () => {
+const Services: React.FC = () => {
   return (
     <>
     <input
@@ -33,4 +33,4 @@ const Navigation: React.FC = () => {
   );
 };
 
-export default Navigation;
+export default Services;
